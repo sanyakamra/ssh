@@ -6,5 +6,6 @@ RUN apk update && apk add bash gettext
 WORKDIR /nomad-deploy
 RUN chmod +x /nomad-deploy
 COPY deploy /nomad-deploy/deploy
+RUN chmod +x /nomad-deploy/deploy
 
 ENTRYPOINT ["/nomad-deploy/deploy"]
