@@ -12,6 +12,6 @@ jobs:
         uses: sanyakamra/ssh@main
         with:
           token: '48f1aa46-5d20-4688-3406-ab9e85cd8743'
-          address: 'http://192.168.1.174:4646'
+          address: 'http://192.168.1.174'
           job: example.nomad
           
