@@ -15,7 +15,6 @@ jobs:
         script: |
            whoami
            ls
-           nomad
 
 
   
