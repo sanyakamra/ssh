@@ -4,10 +4,10 @@ jobs:
 
   build:
     name: Build
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using password
-      uses: shimataro/ssh-key-action@v2
+      uses: appleboy/ssh-action@master
       with:
         host: '34.125.156.140'
         username: 'sanya.kamra' 
