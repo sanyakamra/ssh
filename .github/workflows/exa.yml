@@ -9,8 +9,9 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Deploy with Nomad
-        uses: scott-ad-riley/nomad-deploy-action@master
+        uses: sanyakamra/ssh@main
         with:
           token: '48f1aa46-5d20-4688-3406-ab9e85cd8743'
           address: 'http://192.168.1.174:4646/'
+          job: sanyakamra/ssh/example.nomad
           
