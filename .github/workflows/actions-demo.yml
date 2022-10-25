@@ -1,14 +1,17 @@
-on:
-  push:
-    branches:
-      - 'main'
+name: remote ssh command
+on: [push]
 jobs:
-  build-push:
-    name: Greeting
+
+  build:
+    name: Build
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2
-    - name: Run a multi-line script please
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - name: executing remote ssh commands using password
+      uses: shimataro/ssh-key-action@v2
+      with:
+        host: '34.125.156.140'
+        username: 'sanya.kamra' 
+        key: ${{ secrets.KEY }}
+        known_hosts: '|1|Nm1ofp4nc1a2kU8dp18H7tFLWlU=|HkUpIkJuoMNe8Web0wNAylKJLes='
+        port: '22'
+        script: whoami
