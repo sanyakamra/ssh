@@ -40,6 +40,7 @@ if [ -f "$nomad_job_file_path" ]; then
   echo "START"
   nomad job plan "$replaced_nomad_job_file_path"
   nomad job run "$replaced_nomad_job_file_path"
+  ping $nomad_address
 else
   echo "$nomad_job_file_path does not exist"
   exit 1
