@@ -1,0 +1,27 @@
+name: 'Run Nomad Job'
+description: 'Handles running of a given nomad job'
+inputs:
+  token:
+    description: 'Token used to authenticate with a nomad server'
+    required: true
+  address:
+    description: 'Address of the nomad server'
+    required: true
+  job:
+    description: 'Path to the nomad job file'
+    required: true
+  additional_vars:
+    description: 'Additional vars to set for running job run'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.token }}
+    - ${{ inputs.address }}
+    - ${{ inputs.job }}
+    - ${{ inputs.additional_vars }}
+branding:
+  icon: 'upload-cloud'
+  color: 'green'
