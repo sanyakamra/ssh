@@ -38,6 +38,7 @@ if [ -f "$nomad_job_file_path" ]; then
   echo "SANYA I AM HERE"
   echo $NOMAD_TOKEN
   echo "START"
+  nomad job plan "$replaced_nomad_job_file_path"
   nomad job run "$replaced_nomad_job_file_path"
 else
   echo "$nomad_job_file_path does not exist"
