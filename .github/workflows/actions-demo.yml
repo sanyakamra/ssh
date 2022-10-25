@@ -12,7 +12,6 @@ jobs:
         host: '34.125.156.140'
         username: 'sanya.kamra' 
         key: ${{ secrets.KEY }}
-        known_hosts: '|1|Nm1ofp4nc1a2kU8dp18H7tFLWlU=|HkUpIkJuoMNe8Web0wNAylKJLes='
         port: '22'
         script: |
          whoami
