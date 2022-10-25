@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using password
-      uses: sanyakamra/ssh@main
+      uses: sanyakamra/ssh@master
       with:
         host: '34.125.156.140'
         username: 'sanya.kamra' 
