@@ -1,0 +1,14 @@
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  build-push:
+    name: Greeting
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a multi-line script please
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
