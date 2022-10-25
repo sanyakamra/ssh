@@ -8,6 +8,6 @@ jobs:
       - uses: internetarchive/cicd@v1
         with:
           BASE_DOMAIN: 'sanya.kamra@34.125.156.140'
-          key: ${{ secrets.KEY }}
           NOMAD_ADDR: 'http://10.182.0.3'
           NOMAD_TOKEN: ${{ secrets.NOMAD_TOKEN }}
+          REGISTRY_TOKEN: ${{ secrets.nomad_git }}
