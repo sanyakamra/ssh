@@ -1,16 +1,11 @@
-name: Run Tests & Publish Image
-on: [push]
+name: CICD
+on: push
 jobs:
-  deploy:
-    name: Nomad Deploy
+  cicd:
     runs-on: ubuntu-latest
+    permissions: { contents: read, packages: write, id-token: write }
     steps:
-      - name: Checkout the code
-        uses: actions/checkout@v1
-
-      - name: Deploy with Nomad
-        uses: sanyakamra/ssh@main
+      - uses: internetarchive/cicd@v1
         with:
-          token: '48f1aa46-5d20-4688-3406-ab9e85cd8743'
-          address: 'http://192.168.1.174:4646/'
-          job: sanyakamra/ssh/example.nomad
+          NOMAD_ADDR: 'http://192.168.1.174:4646/'
+          NOMAD_TOKEN: '48f1aa46-5d20-4688-3406-ab9e85cd8743'
