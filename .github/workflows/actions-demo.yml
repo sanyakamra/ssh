@@ -13,11 +13,9 @@ jobs:
         username: 'sanya.kamra' 
         key: ${{ secrets.KEY }}
         port: '22'
-    - name: Nomad runner
-      uses: internetarchive/cicd@v1
-      with:
-          BASE_DOMAIN: 'sanya.kamra@34.125.156.140'
-          NOMAD_ADDR: 'http://10.182.0.3:4647'
-          NOMAD_TOKEN: '597d901f-db6c-403b-c878-318960f4eede'
+        script: |
+           whoami
+           ls -al
+
 
   
