@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM hendrikmaus/nomad-cli:0.10.1
 
 RUN apk update && apk add bash gettext
 
