@@ -8,24 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Run Nomad Pack
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup `nomad-pack`
-        # TODO: define `v1`
-        uses: hashicorp/setup-nomad-pack@main
-        id: setup
+      - name: Check deployment result
+        uses: let-sh/nomad-deploy-result-action@v1
         with:
-          version: "latest" # or `latest`
-
-      - name: Run `nomad-pack info` for `simple_service`
-        id: info
-        run: "nomad-pack info ./packs/simple_service"
-
-      - name: Run `nomad-pack run` for `simple_service`
-        id: run
-        run: "nomad-pack run ./packs/simple_service"
-        env:
-          NOMAD_ADDR: "http://192.168.1.174:4646"
-          NOMAD_TOKEN: "48f1aa46-5d20-4688-3406-ab9e85cd8743"
-        continue-on-error: true
+          nomad-addr: 'http://192.168.1.174:4646'
+          nomad-token: '48f1aa46-5d20-4688-3406-ab9e85cd8743'
+          nomad-job-name: 'docs'
+          nomad-namespace: 'default'
