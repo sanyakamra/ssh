@@ -16,7 +16,7 @@ jobs:
         uses: hashicorp/setup-nomad-pack@main
         id: setup
         with:
-          version: "0.0.1-techpreview2" # or `latest`
+          version: "latest" # or `latest`
 
       - name: Run `nomad-pack info` for `simple_service`
         id: info
